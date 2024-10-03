@@ -41,10 +41,10 @@ export class counterApp1 extends DDDSuper(LitElement) {
 
   render() {
     return html`
-<div class="wrapper">
-  <div>${this.title}</div>
-  <slot></slot>
-</div>`;
+    <div class="wrapper">
+      <div>${this.title}</div>
+      <slot></slot>
+    </div>`;
   }
 
   /**
