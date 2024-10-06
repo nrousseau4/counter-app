@@ -5,7 +5,7 @@
   <base href="/">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Demonstration for counter-app1">
+  <meta name="Description" content="Demonstration for counter-app">
 
   <style>
     :root, html, body {
@@ -13,38 +13,24 @@
       padding: 0;
       background-color: var(--ddd-accent-1);
     }
-    #demo {
-      margin: var(--ddd-spacing-2);
-    }
-    counter-app1 {
+    counter-app {
       margin: var(--ddd-spacing-2);
       border: var(--ddd-border-md);
       border-radius: var(--ddd-radius-lg);
     }
-    counter-app1:hover {
+    counter-app:hover {
       box-shadow: var(--ddd-boxShadow-sm);
     }
-    #example {
-      --counter-app1-font-size: var(--ddd-font-size-l);
-      background-color: var(--ddd-accent-2);
-      color: var(--ddd-primary-17);
-    }
+
   </style>
-  <title>counter-app1</title>
+  <title>counter-app</title>
 </head>
 
 <body>
-  <div id="demo">
-    <h1>counter-app1</h1>
-    <!-- this is going to do whatever the tag's defaults are -->
-    <h2>Default</h2>
-    <counter-app1></counter-app1>
-    <h2>Slot usage</h2>
-    <counter-app1 data-accent="2" data-primary="17"><div>Sample slot content</div></counter-app1>
-    <h2>Property usage</h2>
-    <counter-app1 id="example" title="Sample property title"></counter-app1>
-  </div>
-  <script type="module" src="./src/counter-app1.js"></script>
+  <counter-app title="Counter App 1" value="16" minValue="10" maxValue="25"></counter-app>
+  <counter-app title="Counter App 2" value="0" minValue="0" maxValue="100"></counter-app>
+
+  <script type="module" src="./src/counter-app.js"></script>
 
   <!-- Take HAX, the Web and you further down the rabbit hole -->
   <style>
@@ -90,7 +76,7 @@
       </p>
       <p>
         You can edit the current page by modifying <code>index.html</code><br />
-        To edit your <strong>counter-app1</strong> tag, modify <code>src/counter-app1.js</code>.
+        To edit your <strong>counter-app</strong> tag, modify <code>src/counter-app.js</code>.
         This file contains all the HTML, CSS and JavaScript used to render your elements above!
       </p>
       <p>
