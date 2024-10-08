@@ -10,14 +10,15 @@ export class counterApp extends DDDSuper(LitElement) {
   constructor() {
     super();
     this.title = "";
-    this.value = 0;
-
+    this.value = 1;
+    this.minValue = 0;
+    this.maxValue = 10;
   }
 
   static get properties() {
     return {
       title: { type: String },
-      value: { type: Number },
+      value: { type: Number, reflect: true },
       maxValue: { type: Number },
       minValue: { type: Number }
     };
@@ -80,6 +81,14 @@ export class counterApp extends DDDSuper(LitElement) {
       .button:focus {
         background: var(--ddd-theme-default-beaver80);
       }
+
+      :host([value="18"]) .value {
+        color: red;
+      }
+
+      :host([value="21"]) .value {
+        color: green;
+      }
     `];
   }
 
@@ -120,7 +129,6 @@ export class counterApp extends DDDSuper(LitElement) {
     }
   }
 
-  /** can't get this to work */
   updated(changedProperties) {
     if (changedProperties.has('value')) {
       if (this.value === 21) {
